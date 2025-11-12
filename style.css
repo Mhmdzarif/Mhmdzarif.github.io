@@ -1,77 +1,93 @@
 body {
-        font-family: 'Inter', sans-serif;
-        background-color: #0d1117;
-        color: #c9d1d9;
-        scroll-behavior: smooth;
-    }
+    font-family: 'Inter', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    scroll-behavior: smooth;
+}
+
+.section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/* Enhanced Gradient Border and Shadow */
+.gradient-border {
+    border: 1px solid transparent;
+    border-image: linear-gradient(to right, #6EE7B7, #3B82F6) 1;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2), 0 4px 6px -4px rgba(0,0,0,0.1);
+}
+
+/* Skill Tag Style */
+.skill-tag {
+    background-color: #1a2430;
+    color: #90d3b6;
+    border: 1px solid #1f2937;
+}
+
+/* Section Title Underline */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #6EE7B7, #3B82F6);
+    margin: 0.75rem auto 0;
+    border-radius: 9999px;
+}
+
+/* Profile Placeholder */
+.profile-placeholder {
+    border: 4px solid #3B82F6;
+    box-shadow: 0 0 25px rgba(59,130,246,0.7);
+}
+
+/* Timeline */
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 3rem;
+    border-left: 2px solid #1f2937;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+    border-left: none;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #6EE7B7;
+    border: 3px solid #0d1117;
+}
+
+/* Initial state: hidden & translated down */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+/* When visible: fade-in and float up */
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Responsive padding adjustments */
+@media (max-width: 768px) {
     .section-padding {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
     }
-
-    /* Enhanced Gradient Border and Shadow */
-    .gradient-border {
-        border: 1px solid transparent;
-        border-image: linear-gradient(to right, #6EE7B7, #3B82F6) 1;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Skill Tag Style */
-    .skill-tag {
-        background-color: #1a2430;
-        color: #90d3b6;
-        border: 1px solid #1f2937;
-    }
-
-    /* Section Title Underline */
-    .section-title::after {
-        content: '';
-        display: block;
-        width: 80px; /* Wider for more impact */
-        height: 4px; /* Thicker */
-        background: linear-gradient(to right, #6EE7B7, #3B82F6);
-        margin: 0.75rem auto 0;
-        border-radius: 9999px;
-    }
-
-    /* Profile Placeholder */
-    .profile-placeholder {
-        border: 4px solid #3B82F6;
-        box-shadow: 0 0 25px rgba(59, 130, 246, 0.7); /* Stronger glow */
-    }
-
-    /* Custom styles for Experience Timeline */
-    .timeline-container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .timeline-item {
-        position: relative;
-        padding-left: 2rem;
-        padding-bottom: 3rem;
-        border-left: 2px solid #1f2937; /* Darker border for contrast */
-    }
-
-    .timeline-item:last-child {
-        padding-bottom: 0;
-        border-left: none; /* No line after the last item */
-    }
-
-    .timeline-dot {
-        position: absolute;
-        left: -8px;
-        top: 0;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background-color: #6EE7B7; /* Green dot */
-        border: 3px solid #0d1117; /* Matches body background to hide line intersection */
-    }
-    /* Responsive adjustments for padding */
-    @media (max-width: 768px) {
-        .section-padding {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-        }
-    }
+}
